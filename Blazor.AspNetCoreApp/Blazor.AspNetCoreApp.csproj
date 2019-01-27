@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>Blazor</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <NoWarn>NU5105</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.8.1" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.3.1" />
+    <PackageReference Include="MediatR.Bus.AspNetCore" Version="0.1.0-work.6" />
+    <PackageReference Include="MediatR.Bus.AspNetCore.Autofac" Version="0.1.0-work.6" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.Server" Version="0.7.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.ResponseCompression" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Blazor.BrowserApp\Blazor.BrowserApp.csproj" />
+    <ProjectReference Include="..\Facilities.Lib.DiAutofac\Facilities.Lib.DiAutofac.csproj" />
+    <ProjectReference Include="..\Facilities.Lib\Facilities.Lib.csproj" />
+    <ProjectReference Include="..\HumanResources.Lib.DiAutofac\HumanResources.Lib.DiAutofac.csproj" />
+    <ProjectReference Include="..\HumanResources.Lib\HumanResources.Lib.csproj" />
+  </ItemGroup>
+
+</Project>

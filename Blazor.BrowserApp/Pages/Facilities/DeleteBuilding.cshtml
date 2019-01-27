@@ -1,0 +1,31 @@
+﻿@page "/facilities/delete/{BuildingId}"
+@inherits DeleteBuildingModel
+
+<h2>Delete</h2>
+<h3>Are you sure you want to delete Building with id : @BuildingId</h3>
+<br />
+
+<div class="col-md-4">
+    <table class="table">
+        <tr>
+            <td>Name</td>
+            <td>@Building.Name</td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>@Building.Gender</td>
+        </tr>
+        <tr>
+            <td>Department</td>
+            <td>@Building.Department</td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td>@Building.City</td>
+        </tr>
+    </table>
+    <div class="form-group">
+        <input type="submit" value="Delete" onclick="@(async () => await Delete())" class="btn btn-default" />
+        <input type="submit" value="Cancel" onclick="@Cancel" class="btn" />
+    </div>
+</div>
