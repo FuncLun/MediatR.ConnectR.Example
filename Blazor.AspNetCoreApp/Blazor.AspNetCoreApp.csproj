@@ -10,8 +10,8 @@
   <ItemGroup>
     <PackageReference Include="Autofac" Version="4.8.1" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.3.1" />
-    <PackageReference Include="MediatR.Bus.AspNetCore" Version="0.1.0-work.6" />
-    <PackageReference Include="MediatR.Bus.AspNetCore.Autofac" Version="0.1.0-work.6" />
+    <PackageReference Include="MediatR.Bus.AspNetCore" Version="0.1.0-work.7" />
+    <PackageReference Include="MediatR.Bus.AspNetCore.Autofac" Version="0.1.0-work.7" />
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Server" Version="0.7.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.0" />

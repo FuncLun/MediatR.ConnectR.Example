@@ -1,4 +1,6 @@
-﻿using Autofac;
+﻿using System;
+using System.Net.Http;
+using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Facilities;
 using HumanResources;
@@ -28,7 +30,9 @@ namespace Blazor
 
             builder.RegisterClientHandlers<EmployeeGetRequest>(
                 typeof(HttpClientHandler<,>)
-                );
+                )
+                .WithParameters(
+                    new TypedParameter(typeof(Uri), new Uri("http://facilities.localtest.me")));
 
             builder.RegisterClientHandlers<BuildingGetRequest>(
                 typeof(HttpClientHandler<,>)
