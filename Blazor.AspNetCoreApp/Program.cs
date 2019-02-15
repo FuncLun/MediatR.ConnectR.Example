@@ -15,12 +15,6 @@ namespace Blazor
     {
         public static void Main(string[] args)
         {
-            Task.WaitAll(new[]
-            {
-                HumanResourcesContext.EnsureDatabase(),
-                FacilitiesContext.EnsureDatabase(),
-            });
-
             BuildWebHost(args).Run();
         }
 

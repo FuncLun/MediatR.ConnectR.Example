@@ -1,11 +1,13 @@
-﻿using Autofac;
+﻿using System.Linq;
+using System.Net.Mime;
+using Autofac;
 using MediatR.Bus;
 using MediatR.Bus.AspNetCore;
 using MediatR.Bus.AspNetCore.Autofac;
 using MediatR.Bus.Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace HumanResources
@@ -16,15 +18,21 @@ namespace HumanResources
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddResponseCompression(options =>
+            {
+                options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(new[]
+                {
+                    MediaTypeNames.Application.Octet,
+                });
+            });
+
+            services.AddCors();
         }
 
         public void ConfigureContainer(ContainerBuilder builder)
         {
             builder.RegisterAssemblyTypes(typeof(HumanResourcesContext).Assembly)
                 .AsImplementedInterfaces();
-
-            builder.RegisterType<HumanResourcesContext>()
-                .AsSelf();
 
             builder.RegisterModule<MediatorModule>();
             builder.RegisterModule<MediatorMiddlewareModule>();
@@ -43,10 +51,21 @@ namespace HumanResources
                 app.UseDeveloperExceptionPage();
             }
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            app.UseCors(options =>
+                options.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials()
+            );
+
+            app.UseResponseCompression();
+
+            app.UseMediatorMiddleware();
+
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync("Hello World!");
+            //});
         }
     }
 }

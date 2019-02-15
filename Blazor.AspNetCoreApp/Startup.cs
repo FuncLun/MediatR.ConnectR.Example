@@ -38,26 +38,28 @@ namespace Blazor
                     WasmMediaTypeNames.Application.Wasm,
                 });
             });
+
+            services.AddCors();
         }
 
         public void ConfigureContainer(ContainerBuilder builder)
         {
-            builder.RegisterAssemblyTypes(typeof(HumanResourcesContext).Assembly)
-                .AsImplementedInterfaces();
+            //builder.RegisterAssemblyTypes(typeof(HumanResourcesContext).Assembly)
+            //    .AsImplementedInterfaces();
 
-            builder.RegisterType<HumanResourcesContext>()
-                .AsSelf();
-            builder.RegisterType<FacilitiesContext>()
-                .AsSelf();
+            //builder.RegisterType<HumanResourcesContext>()
+            //    .AsSelf();
+            //builder.RegisterType<FacilitiesContext>()
+            //    .AsSelf();
 
             builder.RegisterModule<MediatorModule>();
             builder.RegisterModule<MediatorMiddlewareModule>();
 
-            builder.RegisterModule<HumanResourcesLibModule>();
-            builder.RegisterMediatorWrappers<BuildingCreateRequest>();
-
-            builder.RegisterModule<FacilitiesLibModule>();
+            //builder.RegisterModule<HumanResourcesLibModule>();
             builder.RegisterMediatorWrappers<EmployeeCreateRequest>();
+
+            //builder.RegisterModule<FacilitiesLibModule>();
+            builder.RegisterMediatorWrappers<BuildingCreateRequest>();
 
             builder.RegisterMediatorRegistry<MediatorRegistry>();
         }
@@ -65,7 +67,11 @@ namespace Blazor
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseResponseCompression();
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
             app.UseCors(options =>
             {
                 options.AllowAnyOrigin()
@@ -73,10 +79,8 @@ namespace Blazor
                     .AllowAnyHeader()
                     .AllowCredentials();
             });
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+
+            app.UseResponseCompression();
 
             app.UseMvc(routes =>
             {

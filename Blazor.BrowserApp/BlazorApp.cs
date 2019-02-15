@@ -32,10 +32,14 @@ namespace Blazor
                 typeof(HttpClientHandler<,>)
                 )
                 .WithParameters(
-                    new TypedParameter(typeof(Uri), new Uri("http://facilities.localtest.me")));
+                    new TypedParameter(typeof(Uri), new Uri("http://localhost:49224"))
+                    );
 
             builder.RegisterClientHandlers<BuildingGetRequest>(
                 typeof(HttpClientHandler<,>)
+                )
+                .WithParameters(
+                    new TypedParameter(typeof(Uri), new Uri("http://localhost:64831"))
                 );
 
             BrowserServiceProvider = new BrowserServiceProvider(services =>

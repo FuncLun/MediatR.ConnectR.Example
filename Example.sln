@@ -37,10 +37,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HumanResources.Lib", "Human
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HumanResources.Shared", "HumanResources.Shared\HumanResources.Shared.csproj", "{7AF5BAFB-AA32-44CF-A6F1-3D56D0F957C0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Facilities.Lib.DiAutofac", "Facilities.Lib.DiAutofac\Facilities.Lib.DiAutofac.csproj", "{E12BC11D-DAA9-40B3-89EE-8F483BEB1ED4}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HumanResources.Lib.DiAutofac", "HumanResources.Lib.DiAutofac\HumanResources.Lib.DiAutofac.csproj", "{F3533E30-E558-45EF-A064-4557DC2457C1}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,14 +83,6 @@ Global
 		{7AF5BAFB-AA32-44CF-A6F1-3D56D0F957C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AF5BAFB-AA32-44CF-A6F1-3D56D0F957C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AF5BAFB-AA32-44CF-A6F1-3D56D0F957C0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E12BC11D-DAA9-40B3-89EE-8F483BEB1ED4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E12BC11D-DAA9-40B3-89EE-8F483BEB1ED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E12BC11D-DAA9-40B3-89EE-8F483BEB1ED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E12BC11D-DAA9-40B3-89EE-8F483BEB1ED4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F3533E30-E558-45EF-A064-4557DC2457C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F3533E30-E558-45EF-A064-4557DC2457C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F3533E30-E558-45EF-A064-4557DC2457C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F3533E30-E558-45EF-A064-4557DC2457C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,8 +103,6 @@ Global
 		{48243619-F762-45DB-8A43-9B948EC5F024} = {B1B6786D-87C2-4520-BB48-61DF769BB036}
 		{A06D20C5-AB50-4B14-B1BF-C1DD53D823B5} = {B1B6786D-87C2-4520-BB48-61DF769BB036}
 		{7AF5BAFB-AA32-44CF-A6F1-3D56D0F957C0} = {B1B6786D-87C2-4520-BB48-61DF769BB036}
-		{E12BC11D-DAA9-40B3-89EE-8F483BEB1ED4} = {3D067A59-BDFD-42DF-91D2-88D553A72581}
-		{F3533E30-E558-45EF-A064-4557DC2457C1} = {B1B6786D-87C2-4520-BB48-61DF769BB036}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D77F2382-CDB0-424A-ADD6-ACAB7CF2EE41}
