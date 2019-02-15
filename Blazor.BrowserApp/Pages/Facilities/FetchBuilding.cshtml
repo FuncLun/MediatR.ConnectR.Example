@@ -20,10 +20,10 @@ else
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Gender</th>
-                <th>Department</th>
+                <th>Building Name</th>
+                <th>Address</th>
                 <th>City</th>
+                <th>State</th>
             </tr>
         </thead>
         <tbody>
@@ -31,10 +31,10 @@ else
             {
                 <tr>
                     <td>@emp.BuildingId</td>
-                    <td>@emp.Name</td>
-                    <td>@emp.Gender</td>
-                    <td>@emp.Department</td>
+                    <td>@emp.BuildingName</td>
+                    <td>@emp.Address</td>
                     <td>@emp.City</td>
+                    <td>@emp.State</td>
                     <td>
                         <a href='@FacilitiesPages.EditBuilding/@emp.BuildingId'>Edit</a>  |
                         <a href='@FacilitiesPages.DeleteBuilding/@emp.BuildingId'>Delete</a>

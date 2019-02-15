@@ -7,7 +7,7 @@
 
     <!-- Temporary workaround for a VS build issue -->
     <BlazorRebuildOnFileChange>false</BlazorRebuildOnFileChange>
-    <RootNamespace>Blazor</RootNamespace>
+    
     <NoWarn>NU5105</NoWarn>
   </PropertyGroup>
 

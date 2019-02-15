@@ -8,24 +8,20 @@
     <div class="col-md-4">
         <form onsubmit="return false;">
             <div class="form-group">
-                <label for="Name" class="control-label">Name</label>
-                <input for="Name" class="form-control" bind="@Building.Name" />
+                <label for="BuildingName" class="control-label">Building Name</label>
+                <input for="BuildingName" class="form-control" bind="@Building.BuildingName" />
             </div>
             <div class="form-group">
-                <label asp-for="Gender" class="control-label">Gender</label>
-                <select asp-for="Gender" class="form-control" bind="@Building.Gender">
-                    <option value="">-- Select Gender --</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Department" class="control-label">Department</label>
-                <input asp-for="Department" class="form-control" bind="@Building.Department" />
+                <label asp-for="Address" class="control-label">Address</label>
+                <input asp-for="Address" class="form-control" bind="@Building.Address" />
             </div>
             <div class=" form-group">
                 <label asp-for="City" class="control-label">City</label>
                 <input asp-for="City" class="form-control" bind="@Building.City" />
+            </div>
+            <div class="form-group">
+                <label asp-for="State" class="control-label">State</label>
+                <input asp-for="State" class="form-control" bind="@Building.State" />
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" onclick="@(async () => await UpdateBuilding())" class="btn" />

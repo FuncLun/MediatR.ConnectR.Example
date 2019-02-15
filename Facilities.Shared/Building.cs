@@ -6,12 +6,12 @@ namespace Facilities
     {
         public int BuildingId { get; set; }
         [Required]
-        public string Name { get; set; }
+        public string BuildingName { get; set; }
         [Required]
-        public string Gender { get; set; }
-        [Required]
-        public string Department { get; set; }
+        public string Address { get; set; }
         [Required]
         public string City { get; set; }
+        [Required]
+        public string State { get; set; }
     }
 }
