@@ -13,10 +13,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MediatR.Bus.AspNetCore" Version="0.1.0-work.7" />
-    <PackageReference Include="MediatR.Bus.Autofac" Version="0.1.0-work.7" />
+    <PackageReference Include="MediatR.Bus.AspNetCore" Version="0.1.0-work.12" />
+    <PackageReference Include="MediatR.Bus.Autofac" Version="0.1.0-work.12" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
   </ItemGroup>
 
 </Project>

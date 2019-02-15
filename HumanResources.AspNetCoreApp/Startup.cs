@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using MediatR.Bus;
 using MediatR.Bus.AspNetCore;
 using MediatR.Bus.AspNetCore.Autofac;
 using MediatR.Bus.Autofac;
@@ -29,7 +30,7 @@ namespace HumanResources
             builder.RegisterModule<MediatorMiddlewareModule>();
 
             builder.RegisterModule<HumanResourcesLibModule>();
-            builder.RegisterMediatorMessageDelegates<EmployeeCreateRequest>();
+            builder.RegisterMediatorWrappers<EmployeeCreateRequest>();
 
             builder.RegisterMediatorRegistry<MediatorRegistry>();
         }

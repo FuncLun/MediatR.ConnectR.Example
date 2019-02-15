@@ -6,6 +6,7 @@ using System.Net.Mime;
 using Autofac;
 using Facilities;
 using HumanResources;
+using MediatR.Bus;
 using MediatR.Bus.AspNetCore;
 using MediatR.Bus.AspNetCore.Autofac;
 using MediatR.Bus.Autofac;
@@ -53,10 +54,10 @@ namespace Blazor
             builder.RegisterModule<MediatorMiddlewareModule>();
 
             builder.RegisterModule<HumanResourcesLibModule>();
-            builder.RegisterMediatorMessageDelegates<BuildingCreateRequest>();
+            builder.RegisterMediatorWrappers<BuildingCreateRequest>();
 
             builder.RegisterModule<FacilitiesLibModule>();
-            builder.RegisterMediatorMessageDelegates<EmployeeCreateRequest>();
+            builder.RegisterMediatorWrappers<EmployeeCreateRequest>();
 
             builder.RegisterMediatorRegistry<MediatorRegistry>();
         }

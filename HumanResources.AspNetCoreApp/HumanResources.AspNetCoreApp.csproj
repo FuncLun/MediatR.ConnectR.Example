@@ -13,9 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MediatR.Bus" Version="0.1.0-work.7" />
-    <PackageReference Include="MediatR.Bus.AspNetCore.Autofac" Version="0.1.0-work.7" />
-    <PackageReference Include="MediatR.Bus.BlazorHttpClient" Version="0.1.0-work.7" />
+    <PackageReference Include="MediatR.Bus" Version="0.1.0-work.12" />
+    <PackageReference Include="MediatR.Bus.AspNetCore.Autofac" Version="0.1.0-work.12" />
+    <PackageReference Include="MediatR.Bus.BlazorHttpClient" Version="0.1.0-work.12" />
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
   </ItemGroup>
 
