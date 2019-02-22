@@ -1,10 +1,10 @@
 ﻿using System.Linq;
 using System.Net.Mime;
 using Autofac;
-using MediatR.Bus;
-using MediatR.Bus.AspNetCore;
-using MediatR.Bus.AspNetCore.Autofac;
-using MediatR.Bus.Autofac;
+using MediatR.ConnectR;
+using MediatR.ConnectR.AspNetCore;
+using MediatR.ConnectR.AspNetCore.Autofac;
+using MediatR.ConnectR.Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.ResponseCompression;

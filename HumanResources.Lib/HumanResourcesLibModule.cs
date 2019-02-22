@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using MediatR.Bus.Autofac;
+using MediatR.ConnectR.Autofac;
 using Microsoft.EntityFrameworkCore;
 
 namespace HumanResources

@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.3.1" />
-    <PackageReference Include="MediatR.Bus.AspNetCore.Autofac" Version="0.1.0-work.14" />
+    <PackageReference Include="MediatR.ConnectR.AspNetCore.Autofac" Version="0.1.0-work.15" />
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.ResponseCompression" Version="2.2.0" />

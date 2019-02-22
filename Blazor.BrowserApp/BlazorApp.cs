@@ -4,8 +4,8 @@ using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Facilities;
 using HumanResources;
-using MediatR.Bus.Autofac;
-using MediatR.Bus.BlazorHttpClient;
+using MediatR.ConnectR.Autofac;
+using MediatR.ConnectR.BlazorHttpClient;
 using Microsoft.AspNetCore.Blazor.Browser.Rendering;
 using Microsoft.AspNetCore.Blazor.Browser.Services;
 
