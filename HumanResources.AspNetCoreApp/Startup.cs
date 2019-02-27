@@ -38,9 +38,7 @@ namespace HumanResources
             builder.RegisterModule<MediatorMiddlewareModule>();
 
             builder.RegisterModule<HumanResourcesLibModule>();
-            builder.RegisterMediatorWrappers<EmployeeCreateRequest>();
-
-            builder.RegisterMediatorRegistry<MediatorRegistry>();
+            builder.RegisterMediatorRequestWrappers<EmployeeCreateRequest>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

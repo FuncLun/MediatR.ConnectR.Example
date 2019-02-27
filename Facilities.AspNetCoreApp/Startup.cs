@@ -41,9 +41,7 @@ namespace Facilities
             builder.RegisterModule<MediatorMiddlewareModule>();
 
             builder.RegisterModule<FacilitiesLibModule>();
-            builder.RegisterMediatorWrappers<BuildingCreateRequest>();
-
-            builder.RegisterMediatorRegistry<MediatorRegistry>();
+            builder.RegisterMediatorRequestWrappers<BuildingCreateRequest>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

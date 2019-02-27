@@ -9,7 +9,7 @@ namespace Facilities
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterAssemblyTypes(typeof(BuildingCreateHandler).Assembly);
-            builder.RegisterAssemblyHandlers<BuildingCreateHandler>();
+            builder.RegisterAssemblyMediatorHandlers<BuildingCreateHandler>();
 
             builder.Register(c => new DbContextOptionsBuilder<FacilitiesContext>()
                     .UseSqlite(@"Data Source=..\~$BlazorCrud.Facilities.sqlite")

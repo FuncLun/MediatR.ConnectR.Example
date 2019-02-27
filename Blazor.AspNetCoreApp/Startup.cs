@@ -56,12 +56,10 @@ namespace Blazor
             builder.RegisterModule<MediatorMiddlewareModule>();
 
             //builder.RegisterModule<HumanResourcesLibModule>();
-            builder.RegisterMediatorWrappers<EmployeeCreateRequest>();
+            builder.RegisterMediatorRequestWrappers<EmployeeCreateRequest>();
 
             //builder.RegisterModule<FacilitiesLibModule>();
-            builder.RegisterMediatorWrappers<BuildingCreateRequest>();
-
-            builder.RegisterMediatorRegistry<MediatorRegistry>();
+            builder.RegisterMediatorRequestWrappers<BuildingCreateRequest>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

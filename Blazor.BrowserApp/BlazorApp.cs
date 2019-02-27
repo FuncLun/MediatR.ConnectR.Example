@@ -28,14 +28,14 @@ namespace Blazor
 
             builder.RegisterModule<MediatorModule>();
 
-            builder.RegisterClientHandlers<EmployeeGetRequest>(
+            builder.RegisterClientRequestHandlers<EmployeeGetRequest>(
                 typeof(HttpClientHandler<,>)
                 )
                 .WithParameters(
                     new TypedParameter(typeof(Uri), new Uri("http://localhost:49224"))
                     );
 
-            builder.RegisterClientHandlers<BuildingGetRequest>(
+            builder.RegisterClientRequestHandlers<BuildingGetRequest>(
                 typeof(HttpClientHandler<,>)
                 )
                 .WithParameters(
