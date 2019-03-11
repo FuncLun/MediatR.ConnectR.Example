@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace HumanResources
 {
@@ -38,7 +40,19 @@ namespace HumanResources
             builder.RegisterModule<MediatorMiddlewareModule>();
 
             builder.RegisterModule<HumanResourcesLibModule>();
-            builder.RegisterMediatorRequestWrappers<EmployeeCreateRequest>();
+            builder.RegisterMediatorRequestWrappers<EmployeeCreateHandler>();
+
+            builder.RegisterInstance(new MediatorMiddlewareOptions()
+            {
+                BreakOnException = true,
+                JsonSerializerSettings = new JsonSerializerSettings()
+                {
+                    Formatting = Formatting.Indented,
+                    ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                },
+                ReturnExceptionDetails = true,
+                ReturnExceptionMessage = true,
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,7 +70,7 @@ namespace HumanResources
                     .AllowCredentials()
             );
 
-            app.UseResponseCompression();
+            //app.UseResponseCompression();
 
             app.UseMediatorMiddleware();
 

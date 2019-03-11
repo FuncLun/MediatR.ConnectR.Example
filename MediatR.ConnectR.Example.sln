@@ -37,6 +37,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HumanResources.Lib", "Human
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HumanResources.Shared", "HumanResources.Shared\HumanResources.Shared.csproj", "{7AF5BAFB-AA32-44CF-A6F1-3D56D0F957C0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solution Items", "{584E7F0E-1232-4F14-97BC-956199C7C0D2}"
+	ProjectSection(SolutionItems) = preProject
+		GitVersion.yml = GitVersion.yml
+		global.json = global.json
+		LICENSE = LICENSE
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

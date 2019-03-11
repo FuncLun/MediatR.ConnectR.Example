@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Net.Mime;
 using Autofac;
+using Autofac.Core;
 using MediatR.ConnectR;
 using MediatR.ConnectR.AspNetCore;
 using MediatR.ConnectR.AspNetCore.Autofac;
@@ -9,6 +10,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace Facilities
 {
@@ -41,11 +44,23 @@ namespace Facilities
             builder.RegisterModule<MediatorMiddlewareModule>();
 
             builder.RegisterModule<FacilitiesLibModule>();
-            builder.RegisterMediatorRequestWrappers<BuildingCreateRequest>();
+            builder.RegisterMediatorRequestWrappers<BuildingCreateHandler>();
+
+            builder.RegisterInstance(new MediatorMiddlewareOptions()
+            {
+                BreakOnException = true,
+                JsonSerializerSettings = new JsonSerializerSettings()
+                {
+                    Formatting = Formatting.Indented,
+                    ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                },
+                ReturnExceptionDetails = true,
+                ReturnExceptionMessage = true,
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILifetimeScope scope)
         {
             if (env.IsDevelopment())
             {

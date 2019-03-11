@@ -8,7 +8,8 @@ namespace Facilities
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterAssemblyTypes(typeof(BuildingCreateHandler).Assembly);
+            builder.RegisterAssemblyTypes(typeof(BuildingCreateHandler).Assembly)
+                .AsImplementedInterfaces();
             builder.RegisterAssemblyMediatorHandlers<BuildingCreateHandler>();
 
             builder.Register(c => new DbContextOptionsBuilder<FacilitiesContext>()

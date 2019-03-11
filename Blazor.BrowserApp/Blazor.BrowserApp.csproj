@@ -20,8 +20,8 @@
 
   <ItemGroup>
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.3.1" />
-    <PackageReference Include="MediatR.ConnectR.Autofac" Version="0.1.0-work.15" />
-    <PackageReference Include="MediatR.ConnectR.BlazorHttpClient" Version="0.1.0-work.8" />
+    <PackageReference Include="MediatR.ConnectR.Autofac" Version="1.0.1-feature.work.2" />
+    <PackageReference Include="MediatR.ConnectR.BlazorHttpClient" Version="1.0.1-feature.work.2" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Browser" Version="0.7.0" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="0.7.0" PrivateAssets="all" />
     <DotNetCliToolReference Include="Microsoft.AspNetCore.Blazor.Cli" Version="0.7.0" />
