@@ -3,12 +3,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Facilities;
 using MediatR;
-using Microsoft.AspNetCore.Blazor.Components;
-using Microsoft.AspNetCore.Blazor.Services;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Services;
 
 namespace Blazor.BrowserApp.Pages.Facilities
 {
-    public class DeleteBuildingModel : BlazorComponent
+    public class DeleteBuildingModel : ComponentBase
     {
         [Inject]
         protected IUriHelper UriHelper { get; set; }

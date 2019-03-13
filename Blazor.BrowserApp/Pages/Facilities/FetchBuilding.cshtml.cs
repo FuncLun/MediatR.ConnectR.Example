@@ -2,11 +2,11 @@
 using System.Threading.Tasks;
 using Facilities;
 using MediatR;
-using Microsoft.AspNetCore.Blazor.Components;
+using Microsoft.AspNetCore.Components;
 
 namespace Blazor.BrowserApp.Pages.Facilities
 {
-    public class FetchBuildingModel : BlazorComponent
+    public class FetchBuildingModel : ComponentBase
     {
         [Inject]
         protected IMediator Mediator { get; set; }

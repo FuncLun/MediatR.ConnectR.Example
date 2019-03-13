@@ -3,12 +3,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using HumanResources;
 using MediatR;
-using Microsoft.AspNetCore.Blazor.Components;
-using Microsoft.AspNetCore.Blazor.Services;
+using Microsoft.AspNetCore.Blazor;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Services;
 
 namespace Blazor.BrowserApp.Pages.HumanResources
 {
-    public class DeleteEmployeeModel : BlazorComponent
+    public class DeleteEmployeeModel : ComponentBase
     {
         [Inject]
         protected IUriHelper UriHelper { get; set; }

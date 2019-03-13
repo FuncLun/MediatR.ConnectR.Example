@@ -1,12 +1,12 @@
 ﻿using System.Threading.Tasks;
 using HumanResources;
 using MediatR;
-using Microsoft.AspNetCore.Blazor.Components;
-using Microsoft.AspNetCore.Blazor.Services;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Services;
 
 namespace Blazor.BrowserApp.Pages.HumanResources
 {
-    public class AddEmployeeModel : BlazorComponent
+    public class AddEmployeeModel : ComponentBase
     {
         [Inject]
         protected IUriHelper UriHelper { get; set; }

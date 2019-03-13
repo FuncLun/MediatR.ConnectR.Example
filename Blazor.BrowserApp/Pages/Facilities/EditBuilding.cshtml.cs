@@ -3,13 +3,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Facilities;
 using MediatR;
-using Microsoft.AspNetCore.Blazor.Components;
-using Microsoft.AspNetCore.Blazor.Services;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Services;
 using Http = System.Net.Http;
 
 namespace Blazor.BrowserApp.Pages.Facilities
 {
-    public class EditBuildingModel : BlazorComponent
+    public class EditBuildingModel : ComponentBase
     {
         [Inject]
         protected IUriHelper UriHelper { get; set; }

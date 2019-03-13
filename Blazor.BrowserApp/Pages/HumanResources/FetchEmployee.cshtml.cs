@@ -2,11 +2,11 @@
 using System.Threading.Tasks;
 using HumanResources;
 using MediatR;
-using Microsoft.AspNetCore.Blazor.Components;
+using Microsoft.AspNetCore.Components;
 
 namespace Blazor.BrowserApp.Pages.HumanResources
 {
-    public class FetchEmployeeModel : BlazorComponent
+    public class FetchEmployeeModel : ComponentBase
     {
         [Inject]
         protected IMediator Mediator { get; set; }
