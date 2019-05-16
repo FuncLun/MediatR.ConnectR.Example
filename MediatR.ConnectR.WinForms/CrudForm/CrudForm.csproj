@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4D0B3F80-E987-456E-8E79-6D1D3ACCCF73}</ProjectGuid>
+    <ProjectGuid>{7A3552A2-9418-4711-923A-5CF30D4FDDA8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WinForms.WinFormsApp</RootNamespace>
-    <AssemblyName>WinForms.WinFormsApp</AssemblyName>
+    <RootNamespace>CrudForm</RootNamespace>
+    <AssemblyName>CrudForm</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.9.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.9.2\lib\net45\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,6 +55,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -66,6 +75,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -78,6 +88,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Facilities.Lib\Facilities.Lib.csproj">
+      <Project>{9bf025e8-91a1-49a4-97b9-50dc21f3136f}</Project>
+      <Name>Facilities.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Facilities.Shared\Facilities.Shared.csproj">
+      <Project>{a02e6252-8447-4fe2-8800-c8dcc5d3587d}</Project>
+      <Name>Facilities.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HumanResources.Lib\HumanResources.Lib.csproj">
+      <Project>{52243ccb-5b8a-4aaf-95eb-ae60d9055541}</Project>
+      <Name>HumanResources.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HumanResources.Shared\HumanResources.Shared.csproj">
+      <Project>{5cf94b87-937b-4a76-b146-77321487fd33}</Project>
+      <Name>HumanResources.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

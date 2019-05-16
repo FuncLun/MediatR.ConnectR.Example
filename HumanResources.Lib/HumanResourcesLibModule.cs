@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using MediatR.ConnectR.Autofac;
+//using MediatR.ConnectR.Autofac;
 using Microsoft.EntityFrameworkCore;
 
 namespace HumanResources
@@ -9,11 +9,11 @@ namespace HumanResources
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterAssemblyTypes(typeof(EmployeeCreateHandler).Assembly);
-            builder.RegisterAssemblyMediatorHandlers<EmployeeCreateHandler>();
+            //builder.RegisterAssemblyMediatorHandlers<EmployeeCreateHandler>();
 
             builder.Register(c => new DbContextOptionsBuilder<HumanResourcesContext>()
                     //.UseSqlServer(@"Data Source=IN01N01079\SQLEXPRESS;Initial Catalog=myTestDB;User Id=testuser; Password=sa;")
-                    .UseSqlite(@"Data Source=..\~$BlazorCrud.HumanResources.sqlite")
+                    .UseSqlite(@"Data Source=..\~$ExampleCrud.HumanResources.sqlite")
                     .Options
                 )
                 .SingleInstance()

@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using MediatR.ConnectR.Autofac;
+//using MediatR.ConnectR.Autofac;
 using Microsoft.EntityFrameworkCore;
 
 namespace Facilities
@@ -10,10 +10,10 @@ namespace Facilities
         {
             builder.RegisterAssemblyTypes(typeof(BuildingCreateHandler).Assembly)
                 .AsImplementedInterfaces();
-            builder.RegisterAssemblyMediatorHandlers<BuildingCreateHandler>();
+            //builder.RegisterAssemblyMediatorHandlers<BuildingCreateHandler>();
 
             builder.Register(c => new DbContextOptionsBuilder<FacilitiesContext>()
-                    .UseSqlite(@"Data Source=..\~$BlazorCrud.Facilities.sqlite")
+                    .UseSqlite(@"Data Source=..\~$ExampleCrud.Facilities.sqlite")
                     .Options
                 )
                 .SingleInstance()
