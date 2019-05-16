@@ -2,7 +2,6 @@
 using HumanResources;
 using MediatR;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Services;
 
 namespace Blazor.BrowserApp.Pages.HumanResources
 {

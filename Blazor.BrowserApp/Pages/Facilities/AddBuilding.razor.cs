@@ -2,9 +2,6 @@
 using Facilities;
 using MediatR;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Services;
-
-//using Microsoft.AspNetCore.Components.Services;
 
 namespace Blazor.BrowserApp.Pages.Facilities
 {

@@ -1,21 +1,16 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Facilities;
 using MediatR;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Services;
-using Http = System.Net.Http;
 
 namespace Blazor.BrowserApp.Pages.Facilities
 {
-    public class EditBuildingModel : ComponentBase
+    public class DeleteBuildingModel : ComponentBase
     {
         [Inject]
         protected IUriHelper UriHelper { get; set; }
-
-        [Inject]
-        public Http.HttpClient HttpClient { get; set; }
 
         [Inject]
         protected IMediator Mediator { get; set; }
@@ -31,21 +26,25 @@ namespace Blazor.BrowserApp.Pages.Facilities
             {
                 BuildingId = Convert.ToInt32(BuildingId),
             };
+
             var resp = await Mediator.Send(req);
 
             Building = resp.Buildings.FirstOrDefault();
         }
 
-        protected async Task UpdateBuilding()
+        public async Task Delete()
         {
-            var req = new BuildingUpdateRequest() { Building = Building };
+            var req = new BuildingDeleteRequest()
+            {
+                BuildingId = Convert.ToInt32(BuildingId),
+            };
 
             await Mediator.Send(req);
 
             UriHelper.NavigateTo(FacilitiesPages.FetchBuilding);
         }
 
-        protected void Cancel()
+        public void Cancel()
         {
             UriHelper.NavigateTo(FacilitiesPages.FetchBuilding);
         }

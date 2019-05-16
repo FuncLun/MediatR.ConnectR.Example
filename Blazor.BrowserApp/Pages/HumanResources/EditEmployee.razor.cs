@@ -1,18 +1,20 @@
-using System;
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
 using HumanResources;
 using MediatR;
-using Microsoft.AspNetCore.Blazor;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Services;
+using Http = System.Net.Http;
 
 namespace Blazor.BrowserApp.Pages.HumanResources
 {
-    public class DeleteEmployeeModel : ComponentBase
+    public class EditEmployeeModel : ComponentBase
     {
         [Inject]
         protected IUriHelper UriHelper { get; set; }
+
+        [Inject]
+        public Http.HttpClient HttpClient { get; set; }
 
         [Inject]
         protected IMediator Mediator { get; set; }
@@ -28,25 +30,21 @@ namespace Blazor.BrowserApp.Pages.HumanResources
             {
                 EmployeeId = Convert.ToInt32(EmployeeId),
             };
-
             var resp = await Mediator.Send(req);
 
             Employee = resp.Employees.FirstOrDefault();
         }
 
-        public async Task Delete()
+        protected async Task UpdateEmployee()
         {
-            var req = new EmployeeDeleteRequest()
-            {
-                EmployeeId = Convert.ToInt32(EmployeeId),
-            };
+            var req = new EmployeeUpdateRequest() { Employee = Employee };
 
             await Mediator.Send(req);
 
             UriHelper.NavigateTo(HumanResourcesPages.FetchEmployee);
         }
 
-        public void Cancel()
+        protected void Cancel()
         {
             UriHelper.NavigateTo(HumanResourcesPages.FetchEmployee);
         }

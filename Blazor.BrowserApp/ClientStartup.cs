@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Net.Http;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Facilities;
@@ -7,11 +6,9 @@ using HumanResources;
 using MediatR.ConnectR.Autofac;
 using MediatR.ConnectR.BlazorHttpClient;
 using Microsoft.AspNetCore.Components.Builder;
-using Microsoft.AspNetCore.Components.Rendering;
-using Microsoft.AspNetCore.Components.Services;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Blazor
+namespace Blazor.BrowserApp
 {
     public class ClientStartup
     {
@@ -49,8 +46,7 @@ namespace Blazor
         {
             var builder = new ContainerBuilder();
 
-            var x = new Blazor.BrowserApp.App();
-            app.AddComponent<BrowserApp.App>("app");
+            app.AddComponent<App>("app");
 
             //BrowserServiceProvider = new BrowserServiceProvider(services =>
             //{

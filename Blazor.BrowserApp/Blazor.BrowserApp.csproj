@@ -3,17 +3,18 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <OutputType>Exe</OutputType>
+    <LangVersion>7.3</LangVersion>
     <RestoreAdditionalProjectSources>
       https://dotnet.myget.org/F/aspnetcore-dev/api/v3/index.json;
       https://dotnet.myget.org/F/blazor-dev/api/v3/index.json;
     </RestoreAdditionalProjectSources>
-    <LangVersion>7.3</LangVersion>
+    <RazorLangVersion>3.0</RazorLangVersion>
     <!-- Temporary workaround for a VS build issue -->
     <BlazorRebuildOnFileChange>false</BlazorRebuildOnFileChange>
     
     <NoWarn>NU5105</NoWarn>
     
-    <RootNamespace>Blazor</RootNamespace>
+    <!--<RootNamespace>Blazor</RootNamespace>-->
   </PropertyGroup>
 
   <!--<ItemGroup>
@@ -28,12 +29,11 @@
     <PackageReference Include="MediatR.ConnectR.Autofac" Version="1.0.1-feature.work.2" />
     <PackageReference Include="MediatR.ConnectR.BlazorHttpClient" Version="1.0.1-feature.core3.3" />
     
-    <PackageReference Include="Microsoft.AspNetCore.Blazor" Version="0.9.0-preview3-19154-02" />
-    <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="0.9.0-preview3-19154-02" PrivateAssets="all" />
-    <!--<PackageReference Include="Microsoft.AspNetCore.Components.Browser" Version="0.9.0-preview3-19154-02" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Build" Version="0.9.0-preview3-19154-02" />-->
-    
-    <DotNetCliToolReference Include="Microsoft.AspNetCore.Blazor.Cli" Version="0.9.0-preview3-19154-02" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor" Version="3.0.0-preview5-19227-01" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="3.0.0-preview5-19227-01" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.DevServer" Version="3.0.0-preview5-19227-01" PrivateAssets="all" />
+
+    <!--<DotNetCliToolReference Include="Microsoft.AspNetCore.Blazor.Cli" Version="3.0.0-preview5-19227-01" />-->
   </ItemGroup>
 
   <ItemGroup>
