@@ -1,11 +1,6 @@
-﻿// Copyright (c) .NET Foundation. All rights reserved.
-// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
-
-using Autofac;
+﻿using Autofac;
 using Blazor.BrowserApp;
-using Facilities;
 using HumanResources;
-using MediatR.ConnectR;
 using MediatR.ConnectR.AspNetCore;
 using MediatR.ConnectR.AspNetCore.Autofac;
 using MediatR.ConnectR.Autofac;
@@ -19,8 +14,6 @@ namespace Blazor
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().AddNewtonsoftJson(options =>
@@ -37,7 +30,16 @@ namespace Blazor
                 //});
             });
 
-            services.AddCors();
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy("CorsPolicy",
+            //        builder => builder
+            //        .AllowAnyOrigin()
+            //        .AllowAnyMethod()
+            //        .AllowAnyHeader()
+            //        .AllowCredentials()
+            //        );
+            //});
         }
 
         public void ConfigureContainer(ContainerBuilder builder)
@@ -67,15 +69,7 @@ namespace Blazor
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            //app.UseCors(options =>
-            //{
-            //    options.AllowAnyOrigin()
-            //        .AllowAnyMethod()
-            //        .AllowAnyHeader()
-            //        .AllowCredentials();
-            //});
-
+            
             app.UseResponseCompression();
 
             //app.UseMvc(routes =>
@@ -83,12 +77,17 @@ namespace Blazor
             //    routes.MapRoute(name: "default", template: "{controller}/{action}/{id?}");
             //});
 
+            app.UseClientSideBlazorFiles<ClientStartup>();
+            app.UseRouting();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapDefaultControllerRoute();
+                endpoints.MapFallbackToClientSideBlazor<ClientStartup>("index.html");
+            });
 
             app.UseMediatorMiddleware();
-            app.UseBlazor<ClientStartup>();
 
-            app.UseBlazorDebugging();
+            //app.UseBlazorDebugging();
         }
     }
-
 }

@@ -31,14 +31,14 @@ namespace Blazor.BrowserApp
                     typeof(HttpClientHandler<,>)
                 )
                 .WithParameters(
-                    new TypedParameter(typeof(Uri), new Uri("http://localhost:49224"))
+                    new TypedParameter(typeof(Uri), new Uri("http://localhost:48001"))
                 );
 
             builder.RegisterClientRequestHandlers<BuildingGetRequest>(
                     typeof(HttpClientHandler<,>)
                 )
                 .WithParameters(
-                    new TypedParameter(typeof(Uri), new Uri("http://localhost:64831"))
+                    new TypedParameter(typeof(Uri), new Uri("http://localhost:48002"))
                 );
         }
 

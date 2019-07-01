@@ -1,8 +1,6 @@
 ﻿using System.Linq;
 using System.Net.Mime;
 using Autofac;
-using Autofac.Core;
-using MediatR.ConnectR;
 using MediatR.ConnectR.AspNetCore;
 using MediatR.ConnectR.AspNetCore.Autofac;
 using MediatR.ConnectR.Autofac;
@@ -17,8 +15,6 @@ namespace Facilities
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddResponseCompression(options =>
@@ -36,9 +32,6 @@ namespace Facilities
         {
             builder.RegisterAssemblyTypes(typeof(FacilitiesContext).Assembly)
                 .AsImplementedInterfaces();
-
-            builder.RegisterType<FacilitiesContext>()
-                .AsSelf();
 
             builder.RegisterModule<MediatorModule>();
             builder.RegisterModule<MediatorMiddlewareModule>();
@@ -60,7 +53,7 @@ namespace Facilities
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILifetimeScope scope)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -71,10 +64,10 @@ namespace Facilities
                 options.AllowAnyOrigin()
                     .AllowAnyMethod()
                     .AllowAnyHeader()
-                    .AllowCredentials()
+            //.AllowCredentials()
             );
 
-            app.UseResponseCompression();
+            //app.UseResponseCompression();
 
             app.UseMediatorMiddleware();
 

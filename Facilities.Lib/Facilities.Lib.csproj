@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="MediatR.ConnectR.Autofac" Version="1.0.1-feature.work.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.0.0-preview5.19227.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.2.4" />
   </ItemGroup>
 
   <ItemGroup>

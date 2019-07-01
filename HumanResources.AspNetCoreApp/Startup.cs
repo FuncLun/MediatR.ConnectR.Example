@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using System.Net.Mime;
 using Autofac;
-using MediatR.ConnectR;
 using MediatR.ConnectR.AspNetCore;
 using MediatR.ConnectR.AspNetCore.Autofac;
 using MediatR.ConnectR.Autofac;
@@ -16,8 +15,6 @@ namespace HumanResources
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddResponseCompression(options =>
@@ -67,7 +64,7 @@ namespace HumanResources
                 options.AllowAnyOrigin()
                     .AllowAnyMethod()
                     .AllowAnyHeader()
-                    .AllowCredentials()
+            //.AllowCredentials()
             );
 
             //app.UseResponseCompression();
