@@ -37,8 +37,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Facilities.Shared\Facilities.Shared.csproj" />
-    <ProjectReference Include="..\HumanResources.Shared\HumanResources.Shared.csproj" />
+    <ProjectReference Include="..\..\ServiceAreas\Facilities\Facilities.Shared\Facilities.Shared.csproj" />
+    <ProjectReference Include="..\..\ServiceAreas\HumanResources\HumanResources.Shared\HumanResources.Shared.csproj" />
   </ItemGroup>
 
 </Project>
